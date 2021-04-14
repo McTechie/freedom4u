@@ -2,6 +2,7 @@
   "name": "freedom4u",
   "version": "0.1.0",
   "private": true,
+  "author": "Mcvean Soans",
   "dependencies": {
     "bootstrap": "^4.6.0",
     "is-svg": "^4.2.2",

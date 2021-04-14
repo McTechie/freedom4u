@@ -1,17 +1,26 @@
 /* Universal Styles */
 
-body {
+html, body {
   font-family: 'Raleway';
   font-weight: 600;
-}
-
-a, li {
-  text-decoration: none;
 }
 
 ::selection {
   color: #fff;
   background-color: #A78BFA;
+}
+
+a, li, a:hover {
+  color: #A78BFA;
+  text-decoration: none;
+}
+
+a:hover {
+  font-weight: bold;
+}
+
+button:hover {
+  transition: 600ms;
 }
 
 .content {
@@ -41,11 +50,14 @@ a, li {
   margin-right: 1rem;
   display: inline-block;
   align-self: top;
+  background-color: #fff;
+  border-radius: 10%;
+  padding: 0.5%;
 }
 
 /* Footer Styles */
 
-.footer-highlight, .fa-heart, .fa-facebook-square, .fa-twitter, .fa-youtube, .fa-envelope, .fa-phone-square-alt {
+hr, .footer-highlight, .fa-heart, .fa-facebook-square, .fa-twitter, .fa-youtube, .fa-envelope, .fa-phone-square-alt {
   color: #17a2b8;
 }
 
@@ -58,3 +70,39 @@ a, li {
   transform: scale(1.1);
   transition: ease-in 300ms;
 }
+
+/* Home Page Styles */
+
+/* About Page Styles */
+
+/* Projects Page Styles */
+
+.project-card {
+  border-radius: 1%;
+}
+
+.project-card:hover {
+  transition: ease-in-out 300ms;
+  transform: scale(1.02);
+  box-shadow: 2px 3px 5px 1px #17a2b8;
+}
+
+.project-card-img {
+  height: 300px;
+}
+
+.parallax {
+  background-image: url('./img/projects/jumbotron.jpg');
+  border-radius: 1%;
+  height: 150%; 
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Gallery Page Styles */
+
+/* Donation Page Styles */
+
+/* Contact Page Styles */
