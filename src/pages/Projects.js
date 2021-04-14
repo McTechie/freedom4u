@@ -1,12 +1,26 @@
 import { Container, Card, Row, Button, Jumbotron, Image } from 'react-bootstrap';
-import PreviousProjectsDesktop from '../components/projects/PreviousProjectsDesktop';
+import PreviousProjectsDesktop from '../components/PreviousProjectsDesktop';
 import jumbotron from '../img/projects/jumbotron.jpg';
+import { useState } from 'react';
 
 const Projects = () => {
+
+    const [selection, setSelection] = useState('previous');
+
+    const handleSelection = (e) => {
+        if (e.target.value === 'covid') {
+            setSelection('covid');
+        } else if (e.target.value === 'current') {
+            setSelection('covid');
+        } else {
+            setSelection('previous');
+        }
+    }
+
     return (
         <Container fluid className="parallax">
             <Jumbotron style={{ position: 'relative', padding: 0 }}>
-                <Image className="" src={jumbotron} alt="Jumbotron" fluid style={{ width: '100%', height: '600px' }} />
+                <Image src={jumbotron} alt="Jumbotron" fluid style={{ width: '100%', height: '600px' }} />
                 <div className="p-5 parallax" style={{ position: 'absolute', top: 0}}>
                     <h1 className="text-white mb-4">We prioritize Giving!</h1>
                     <p className="text-white">
@@ -20,14 +34,15 @@ const Projects = () => {
                 </div>
             </Jumbotron>
             <Row>
-                <Card className="p-4" border='info'>
+                <Card className="p-4" border='info' id="projects">
                     <Row className="mb-3" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <Button variant="outline-info" className="mx-2">Covid-19</Button>
-                        <Button variant="outline-info" className="mx-2">Ongoing Work</Button>
-                        <Button variant="outline-info" className="mx-2" active>Previous Projects</Button>
+                        <Button variant="outline-info" className="mx-2" value='covid' onClick={handleSelection}>Covid-19</Button>
+                        <Button variant="outline-info" className="mx-2" value='current' onClick={handleSelection}>Ongoing Work</Button>
+                        <Button variant="outline-info" className="mx-2" value='previous' onClick={handleSelection}>Previous Projects</Button>
                     </Row>
-                    <PreviousProjectsDesktop />
-                    <PreviousProjectsDesktop />
+                    {selection === 'covid'? (<PreviousProjectsDesktop />):(<div />)}
+                    {selection === 'current'? (<PreviousProjectsDesktop />):(<div />)}
+                    {selection === 'previous'? (<PreviousProjectsDesktop />):(<div />)}
                 </Card>
             </Row>
         </Container>

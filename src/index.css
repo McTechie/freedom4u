@@ -57,7 +57,11 @@ button:hover {
 
 /* Footer Styles */
 
-hr, .footer-highlight, .fa-heart, .fa-facebook-square, .fa-twitter, .fa-youtube, .fa-envelope, .fa-phone-square-alt {
+hr {
+  background-color: #6B7280;
+}
+
+.footer-highlight, .fa-heart, .fa-facebook-square, .fa-twitter, .fa-youtube, .fa-envelope, .fa-phone-square-alt {
   color: #17a2b8;
 }
 
@@ -82,13 +86,21 @@ hr, .footer-highlight, .fa-heart, .fa-facebook-square, .fa-twitter, .fa-youtube,
 }
 
 .project-card:hover {
+  cursor: default;
   transition: ease-in-out 300ms;
   transform: scale(1.02);
-  box-shadow: 2px 3px 5px 1px #17a2b8;
+}
+
+.project-card-title {
+  font-size: 0.7em;
 }
 
 .project-card-img {
-  height: 300px;
+  height: 200px;
+}
+
+.project-report-btn {
+  margin: 0 auto;
 }
 
 .parallax {
@@ -106,3 +118,21 @@ hr, .footer-highlight, .fa-heart, .fa-facebook-square, .fa-twitter, .fa-youtube,
 /* Donation Page Styles */
 
 /* Contact Page Styles */
+
+/* Larger Screen Styles */
+
+@media screen and (min-width: 768px) {
+
+  .project-report-btn {
+    margin: 0 0 0 auto;
+  }
+
+  .project-card-img {
+    height: 300px;
+  }
+
+  .project-card-title {
+    font-size: inherit;
+  }
+
+}
