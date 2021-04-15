@@ -4,7 +4,7 @@ import logo from '../img/logo.png';
 
 const NavbarComponent = () => {
     return (
-        <Navbar expand="lg" bg="info" variant="dark">
+        <Navbar sticky="top" expand="lg" bg="info" variant="dark">
             <LinkContainer to="/home">
                 <Navbar.Brand>
                     <img src={logo} className="nav-logo" alt="Freedom4You" /> Freedom For You Foundation

@@ -1,49 +1,48 @@
-import { Container, Card, Row, Button, Jumbotron, Image } from 'react-bootstrap';
+import { Container, Row, Button, Jumbotron } from 'react-bootstrap';
 import PreviousProjects from '../components/PreviousProjects';
-import jumbotron from '../img/projects/jumbotron.jpg';
 import { useState } from 'react';
 
 const Projects = () => {
-
-    const [selection, setSelection] = useState('previous');
-
-    const handleSelection = (e) => {
-        if (e.target.value === 'covid') {
-            setSelection('covid');
-        } else if (e.target.value === 'current') {
-            setSelection('covid');
-        } else {
-            setSelection('previous');
-        }
-    }
+    const [selection, setSelection] = useState('covid');
+    const [covidActive, setCovidActive] = useState(true);
+    const [currentActive, setCurrentActive] = useState(false);
+    const [previousActive, setPreviousActive] = useState(false);
 
     return (
-        <Container fluid className="parallax parallax-projects">
-            <Jumbotron style={{ position: 'relative', padding: 0 }}>
-                <Image src={jumbotron} alt="Jumbotron" fluid style={{ width: '100%', height: '630px' }} />
-                <div className="p-5 parallax parallax-projects" style={{ position: 'absolute', top: 0}}>
-                    <h1 className="text-white mb-4">We prioritize Giving!</h1>
-                    <p className="text-white">
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione neque dolore laborum, sequi nihil labore perspiciatis accusantium numquam esse optio nam facilis tempora qui cum earum reiciendis, iure pariatur expedita quidem ducimus dignissimos, consectetur reprehenderit commodi. Fugit cumque iusto tempore repellendus nesciunt laboriosam itaque, quia praesentium impedit nisi esse dolore delectus et ab a accusantium perspiciatis pariatur, sint quod sequi error adipisci minima. Perspiciatis aliquid voluptatem incidunt recusandae asperiores libero natus iusto aliquam molestias minus explicabo, laborum assumenda, impedit inventore error laudantium consequatur, doloribus illum magni cum minima facere repellendus! Corporis maiores necessitatibus quo neque error omnis officia dignissimos! <br/> <br/>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste minus culpa eum fugiat pariatur ab vitae debitis ut ad aperiam reiciendis harum, error tenetur velit voluptate autem, placeat deserunt explicabo ipsa incidunt modi cum ducimus et! Maiores possimus vitae, suscipit excepturi voluptates, ut enim nobis magnam officia, facere labore praesentium magni ipsum similique nostrum placeat. Eligendi, odio! Recusandae reiciendis architecto velit. Blanditiis at sit repudiandae, quo quam iste voluptatem quidem id ex quos molestias exercitationem, fugit autem accusantium. Illum consequatur excepturi accusantium natus, incidunt placeat, rem consectetur hic delectus illo commodi omnis eligendi vitae. Sunt id dolore deserunt quod praesentium! <br /> <br />
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi molestias voluptate qui adipisci et ea perferendis error, inventore animi vero! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat officia nemo earum impedit aliquid saepe eos, similique aliquam eveniet mollitia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, exercitationem fugit cumque saepe commodi itaque! Iure laudantium ea possimus beatae?
-                    </p>
-                    <Row>
-                        <Button variant="info" className="mx-auto my-4">Know More</Button>
-                    </Row>
-                </div>
-            </Jumbotron>
-            <Row className="">
-                <Card className="p-4" border='info' id="projects">
-                    <Row className="mb-3" style={{ display: "flex", alignItems: "center", justifyContent: "center" }}>
-                        <Button variant="outline-info" className="mx-2" value='covid' onClick={handleSelection}>Covid-19</Button>
-                        <Button variant="outline-info" className="mx-2" value='current' onClick={handleSelection}>Ongoing Work</Button>
-                        <Button variant="outline-info" className="mx-2" value='previous' onClick={handleSelection}>Previous Projects</Button>
-                    </Row>
-                    {selection === 'covid'? (<PreviousProjects />):(<div />)}
-                    {selection === 'current'? (<PreviousProjects />):(<div />)}
-                    {selection === 'previous'? (<PreviousProjects />):(<div />)}
-                </Card>
+        <Container fluid>
+            <Row>
+                <Jumbotron className="parallax parallax-projects mb-0" style={{ position: 'relative', padding: 0, width: '100%', height: '650px' }}>
+                    <div className="p-5" style={{ position: 'absolute', top: 0 }}>
+                        <h1 className="text-white mb-4">You can help us too!</h1>
+                        <p className="text-white">
+                            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Itaque ratione neque dolore laborum, sequi nihil labore perspiciatis accusantium numquam esse optio nam facilis tempora qui cum earum reiciendis, iure pariatur expedita quidem ducimus dignissimos, consectetur reprehenderit commodi. Fugit cumque iusto tempore repellendus nesciunt laboriosam itaque, quia praesentium impedit nisi esse dolore delectus et ab a accusantium perspiciatis pariatur, sint quod sequi error adipisci minima. Perspiciatis aliquid voluptatem incidunt recusandae asperiores libero natus iusto aliquam molestias minus explicabo, laborum assumenda, impedit inventore error laudantium consequatur, doloribus illum magni cum minima facere repellendus! Corporis maiores necessitatibus quo neque error omnis officia dignissimos! <br /> <br />
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Iste minus culpa eum fugiat pariatur ab vitae debitis ut ad aperiam reiciendis harum, error tenetur velit voluptate autem, placeat deserunt explicabo ipsa incidunt modi cum ducimus et! Maiores possimus vitae, suscipit excepturi voluptates, ut enim nobis magnam officia, facere labore praesentium magni ipsum similique nostrum placeat. Eligendi, odio! Recusandae reiciendis architecto velit. Blanditiis at sit repudiandae, quo quam iste voluptatem quidem id ex quos molestias exercitationem, fugit autem accusantium. Illum consequatur excepturi accusantium natus, incidunt placeat, rem consectetur hic delectus illo commodi omnis eligendi vitae. Sunt id dolore deserunt quod praesentium! <br /> <br />
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi molestias voluptate qui adipisci et ea perferendis error, inventore animi vero! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat officia nemo earum impedit aliquid saepe eos, similique aliquam eveniet mollitia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, exercitationem fugit cumque saepe commodi itaque! Iure laudantium ea possimus beatae?
+                        </p>
+                        <Row>
+                            <Button variant="info" className="mx-auto my-4" style={{fontWeight:"700"}}>Know More!</Button>
+                        </Row>
+                    </div>
+                </Jumbotron>
+            </Row>
+            <Row className="alter-strip-nav px-3 py-4">
+                <Button variant="outline-light" className="mx-2 btn-lg" active={covidActive} value='covid'
+                    onClick={() => { setSelection('covid'); setCovidActive(true); setCurrentActive(false); setPreviousActive(false); }} >
+                    <b>Covid-19</b>
+                </Button>
+                <Button variant="outline-light" className="mx-2 btn-lg" active={currentActive} value='current'
+                    onClick={() => { setSelection('current'); setCovidActive(false); setCurrentActive(true); setPreviousActive(false); }} >
+                    <b>Ongoing Work</b>
+                </Button>
+                <Button variant="outline-light" className="mx-2 btn-lg" active={previousActive} value='previous'
+                    onClick={() => { setSelection('previous'); setCovidActive(false); setCurrentActive(false); setPreviousActive(true); }} >
+                    <b>Previous Projects</b>
+                </Button>
+            </Row>
+            <Row className="p-4" >
+                {selection === 'covid' ? (<PreviousProjects />):(<div />)}
+                {selection === 'current' ? (<div><PreviousProjects /> <PreviousProjects /></div>):(<div />)}
+                {selection === 'previous' ? (<PreviousProjects />):(<div />)}
             </Row>
         </Container>
     );
