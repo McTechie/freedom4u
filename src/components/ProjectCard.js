@@ -1,9 +1,9 @@
 import { Row, Col, Card, Button } from 'react-bootstrap';
 
-const Cards = ({ title, icon, img, content, link }) => {
+const ProjectCard = ({ title, icon, img, content, link }) => {
     return (
         <Col xs="6" md="4" className="mx-auto">
-            <Card border="info" className="mt-5 mt-md-4 project-card">
+            <Card className="mt-5 mt-md-4 project-card">
                 <Card.Img src={img} alt="Training 100 poor women" className="project-card-img" />
                 <Card.Title className="p-3 bg-info text-white">
                     <Row>
@@ -26,4 +26,4 @@ const Cards = ({ title, icon, img, content, link }) => {
     );
 }
  
-export default Cards;
+export default ProjectCard;

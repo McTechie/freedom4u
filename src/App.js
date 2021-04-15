@@ -13,7 +13,7 @@ const App = () => {
     <BrowserRouter>
       <div className="App">
         <NavbarComponent />
-        <div className="content">
+        <div>
           <Switch>
             <Route exact path="/">
               <Home />
