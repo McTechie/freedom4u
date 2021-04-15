@@ -1,7 +1,11 @@
 import { Container, Row, Button, Jumbotron } from 'react-bootstrap';
-import PreviousProjects from '../components/PreviousProjects';
+import VolunteerForm from '../components/VolunteerForm';
+import DonationForm from '../components/DonationForm';
+import { useState } from 'react';
 
 const Donation = () => {
+    const [volunteerActive, setVolunteerActive] = useState(true);
+
     return (
         <Container fluid>
             <Row>
@@ -20,11 +24,18 @@ const Donation = () => {
                 </Jumbotron>
             </Row>
             <Row className="alter-strip-nav px-3 py-4">
-                <Button variant="outline-light" className="mx-2 btn-lg"><b>Volunteer at F4U</b></Button>
-                <Button variant="outline-light" className="mx-2 btn-lg" active><b>No Time? No Worries!</b></Button>
+                <Button variant="outline-light" className="mx-2 btn-lg" active={volunteerActive}
+                    onClick={() => setVolunteerActive(true)}>
+                    <b>Volunteer at F4U</b>
+                </Button>
+                <Button variant="outline-light" className="mx-2 btn-lg" active={!volunteerActive}
+                    onClick={(e) => setVolunteerActive(false)}>
+                    <b>No Time? No Worries!</b>
+                </Button>
             </Row>
-            <Row className="mb-3 p-4">
-                <PreviousProjects />
+            <Row className="p-4">
+                { volunteerActive && <VolunteerForm />}
+                { !volunteerActive && <DonationForm />}
             </Row>
         </Container>
     );
