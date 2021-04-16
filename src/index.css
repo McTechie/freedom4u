@@ -3,6 +3,7 @@
 html, body {
   font-family: 'Raleway';
   font-weight: 600;
+  scroll-behavior: smooth;
 }
 
 ::selection {

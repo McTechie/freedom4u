@@ -20,7 +20,9 @@ const Projects = () => {
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi molestias voluptate qui adipisci et ea perferendis error, inventore animi vero! Lorem ipsum, dolor sit amet consectetur adipisicing elit. Repellat officia nemo earum impedit aliquid saepe eos, similique aliquam eveniet mollitia. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Qui, exercitationem fugit cumque saepe commodi itaque! Iure laudantium ea possimus beatae?
                         </p>
                         <Row>
-                            <Button variant="info" className="mx-auto my-4" style={{fontWeight:"700"}}>Know More!</Button>
+                            <a href="#projects" className="mx-auto">
+                                <Button variant="info" className="my-4" style={{fontWeight:"700"}}>Know More!</Button>
+                            </a>    
                         </Row>
                     </div>
                 </Jumbotron>
@@ -39,7 +41,7 @@ const Projects = () => {
                     <b>Previous Projects</b>
                 </Button>
             </Row>
-            <Row className="p-5 mt-4" >
+            <Row className="p-5 mt-2" id="projects">
                 {selection === 'covid' ? (<PreviousProjects />):(<div />)}
                 {selection === 'current' ? (<div><PreviousProjects /> <PreviousProjects /></div>):(<div />)}
                 {selection === 'previous' ? (<PreviousProjects />):(<div />)}
