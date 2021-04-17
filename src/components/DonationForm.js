@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Container, Row, Col, Modal, Button, Form, Card } from 'react-bootstrap';
 
-const VolunteerForm = () => {
+const DonationForm = () => {
     // State Management for form fields
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
@@ -215,4 +215,4 @@ const VolunteerForm = () => {
     );
 }
 
-export default VolunteerForm;
+export default DonationForm;
