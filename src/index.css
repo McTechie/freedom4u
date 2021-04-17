@@ -141,6 +141,11 @@ hr {
   color: #17a2b8;
 }
 
+.custom-control-input:checked~.custom-control-label::before {
+  border-color: #A78BFA;
+  background-color: #A78BFA;
+}
+
 /* Contact Page Styles */
 
 /* Larger Screen Styles */

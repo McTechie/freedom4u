@@ -25,7 +25,7 @@ const Donation = () => {
                     </div>
                 </Jumbotron>
             </Row>
-            <Row className="alter-strip-nav px-3 py-4">
+            <Row className="alter-strip-nav px-3 py-4" id="forms">
                 <Button variant="outline-light" className="mx-2 btn-lg" active={volunteerActive}
                     onClick={() => setVolunteerActive(true)}>
                     <b>Volunteer at F4U</b>
@@ -35,9 +35,9 @@ const Donation = () => {
                     <b>No Time? No Worries!</b>
                 </Button>
             </Row>
-            <Row className="p-4" id="forms">
-                { volunteerActive && <VolunteerForm />}
-                { !volunteerActive && <DonationForm />}
+            <Row className="px-4 pt-4">
+                { volunteerActive && <VolunteerForm /> }
+                { !volunteerActive && <DonationForm /> }
             </Row>
         </Container>
     );
